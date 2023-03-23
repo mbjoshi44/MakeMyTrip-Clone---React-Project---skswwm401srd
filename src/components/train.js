@@ -81,7 +81,7 @@ import Checkout from './checkout';
 
 
 
-         {loader ? <div style={{ marginLeft: "590px" }}><ColorRing
+         {loader ? <div style={{ marginLeft: "720px" }}><ColorRing
                 visible={true}
                 height="80"
                 width="80"

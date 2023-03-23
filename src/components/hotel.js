@@ -63,7 +63,7 @@ const Hotel = () => {
 
 
 
-         {loader ? <div style={{ marginLeft: "630px" }}><ColorRing
+         {loader ? <div style={{ marginLeft: "720px" }}><ColorRing
                     visible={true}
                     height="80"
                     width="80"
