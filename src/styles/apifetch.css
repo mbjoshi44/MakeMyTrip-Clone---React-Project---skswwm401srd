@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.ApiContentOuter {
+    width: 100%;
+    height: 300px;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.ApiContentInner {
+    position: relative;
+    width: 40%;
+    display: flex;
+    border: 3px solid rgb(206, 30, 30);
+    justify-content: space-around;
+    margin: 10px;
+    padding-top: 15px;
+    border-radius: 15px;
+}
+.ApiContentInner:hover{
+    box-shadow:10px  5px 5px #807e7e; 
+    transition: all .5s;
+    /* border: 2px solid white; */
+    border-radius: 40px;
+}
+.font {
+    font-size: 22px;
+    font-weight: 40;
+}
+
+span {
+    font-size: 15px;
+    color: gray;
+}
+
+span.font {
+    font-size: 10px;
+}
+.BookBtn{
+    position: absolute;
+    top: 222px;
+    left: 215px;
+    
+}
+.BookBtn button{
+    padding: 8px;
+    font-size: 20px;
+    width: 130px;   
+    background: rgb(25,135,84);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    /* letter-spacing: 4px; */
+    word-spacing: 1px;
+}
+#rupees{
+    font-size: 22px;
+    color: green;
+}

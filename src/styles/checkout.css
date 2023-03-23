@@ -1,0 +1,53 @@
+.modalCss{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(194,194,195,0.4);
+    z-index: 1000;
+}
+.MMTmodal{
+    border-radius: 3%;
+    border: 3px solid white;
+    position: fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    width: 500px;
+    height: 500px;
+    
+}
+.Fare{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.baseFare{
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    border-bottom: 2px solid black;
+    margin: 10px;
+}
+#numbers{
+    margin-left: 10px;
+}
+.PaymentInput input{
+    /* text-align: center; */
+    /* border-radius: 1px; */
+    font-size: 15px;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+    width: 460px;
+    padding: 2px;
+    margin: 3px;
+}
+.btnPay{
+    text-align: center;
+    margin: 5px;
+}
+.btnPay button{
+    margin: 10px;
+}
