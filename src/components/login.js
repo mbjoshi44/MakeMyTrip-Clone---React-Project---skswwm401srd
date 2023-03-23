@@ -46,9 +46,10 @@ function Login(){
                         ...localContext.appState,
                         loginStatus: true,                      //true means logged in
                         username: loginformdata.username,
+                         
                     }
                     localContext.setAppState(obj)
-                    // navigate("/nav");
+                     navigate("/flight");
                   
                    }    else {
                     setLoginApiFailStatus(true);
@@ -83,7 +84,7 @@ function Login(){
             Username: <input type="text" id="username" onChange={updateData} value={loginformdata.username} /><br></br>
 
           Password: <input type="password" id="password" onChange={updateData} value={loginformdata.password} /><br></br><br></br>
-                    <button  onClick={loginFn}>Login</button>
+                    <button type='submit'  onClick={loginFn}>Login</button>
              
                     {loginstatus && <div class="alert alert-success" role="alert">
                 <h2>Successfully Logged In</h2>

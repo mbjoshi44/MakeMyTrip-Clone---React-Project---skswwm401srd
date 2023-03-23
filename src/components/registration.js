@@ -35,6 +35,7 @@ const [status, setStatus] = useState(false);
       localStorage.setItem('users', JSON.stringify([...temp, formdata]));
       //store the response in a state variable
       setFormdata(initialData);
+      navigate("/login")
 }
 
 useEffect(() => {
@@ -44,6 +45,10 @@ useEffect(() => {
 
     return(
        <>
+            <br />
+        <br /> <br />
+        <br /> <br />
+        <br />
             <div className="form">
             
             
@@ -52,13 +57,15 @@ useEffect(() => {
 Password: <input type="password" id="password" onChange={updateData} value={formdata.password} /><br></br><br></br>
 
 
-        {/* <br />
-        <br /> */}
+        <br />
+        <br />
         <button onClick={registerFn} type="submit">Register</button>
         <br />
-        <p className='existing-account'>
-          <Link to={"/login"}>Already Have An Account? Please Login</Link>
-        </p>
+        <br />
+        <br />
+       
+          Already Have An Account?<Link to={"/login"}><button type="submit" > Please Login</button></Link>
+       
       
                 
                 
