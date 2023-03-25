@@ -9,18 +9,12 @@ const localContext = useContext(DataAppContext);
 const{appState , setAppState} = localContext;
 const{username , loginStatus} = appState;
 const navigate = useNavigate();
-
-
-
-    
   const cancel = ()=>{
     let list = [...data]
     list[index].isMb = !list[index].isMb
     setdata(list)       
-}
+     }
 const [success, setSuccess] = useState(false);
-
-
   if(!loginStatus){
     navigate('/login')
   }
