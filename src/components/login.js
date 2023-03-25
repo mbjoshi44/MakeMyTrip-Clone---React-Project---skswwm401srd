@@ -34,7 +34,14 @@ function Login(){
     let temp = JSON.parse(localStorage.getItem('users'));
 
     // const userMatch = temp.find((u) => u.username === loginformdata.username && u.password === loginformdata.password);
+
    if(temp){
+       if(loginformdata.username == "" && loginformdata.password == ""){
+        alert(" please fill neccesory detail")
+        return
+       }
+
+
     for(let i=0 ; i<temp.length ; i++) {
 
         if(temp[i].username === loginformdata.username) {
@@ -81,9 +88,9 @@ function Login(){
             <br></br>
             <div className="form">
            
-            Username: <input type="text" id="username" onChange={updateData} value={loginformdata.username} /><br></br>
+            Username: <input type="text" id="username" onChange={updateData} value={loginformdata.username} required/><br></br>
 
-          Password: <input type="password" id="password" onChange={updateData} value={loginformdata.password} /><br></br><br></br>
+          Password: <input type="password" id="password" onChange={updateData} value={loginformdata.password}  required/><br></br><br></br>
                     <button type='submit'  onClick={loginFn}>Login</button>
              
                     {loginstatus && <div class="alert alert-success" role="alert">

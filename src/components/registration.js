@@ -28,9 +28,13 @@ const [status, setStatus] = useState(false);
   
     //methods for form submission button
     const registerFn = () => {
+      if(formdata.username == "" && formdata.password == ""){
+        alert(" please fill neccesory detail")
+        return
+       }
       //form submiited
       setStatus(true);
-      //call api for form submission - POST - Submit Data - formdata/localstorage
+     
       let temp = JSON.parse(localStorage.getItem('users')) || [];
       localStorage.setItem('users', JSON.stringify([...temp, formdata]));
       //store the response in a state variable
@@ -52,9 +56,9 @@ useEffect(() => {
             <div className="form">
             
             
-            Username: <input type="text" id="username" onChange={updateData} value={formdata.username} /><br></br>
+            Username: <input type="text" id="username" onChange={updateData} value={formdata.username} required /><br></br>
 
-Password: <input type="password" id="password" onChange={updateData} value={formdata.password} /><br></br><br></br>
+          Password: <input type="password" id="password" onChange={updateData} value={formdata.password} required/><br></br><br></br>
 
 
         <br />
@@ -64,11 +68,7 @@ Password: <input type="password" id="password" onChange={updateData} value={form
         <br />
         <br />
        
-          Already Have An Account?<Link to={"/login"}><button type="submit" > Please Login</button></Link>
-       
-      
-                
-                
+          Already Have An Account?<Link to={"/login"}><button type="submit" > Please Login</button></Link>      
             </div>
        </>
     )

@@ -4,6 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../images/makemytrip-logo.png'
 import { DataAppContext } from './DataApp';
  const Nav = () => {
+
+
+
+
   const navigate = useNavigate();
 const localContext = useContext(DataAppContext)
 const {appState , setAppState} = localContext
