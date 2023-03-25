@@ -1,13 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
+import { DataAppContext } from "./DataApp";
+import {  useNavigate } from "react-router-dom";
 import { ColorRing } from 'react-loader-spinner';
 import Checkout from './checkout';
 const Hotel = () => {
   const [data, setdata] = useState([]);
     const [loader, setLoader] = useState(false);
+
+    const localContext = useContext(DataAppContext);
+  const{appState , setAppState} = localContext;
+  const{username , loginStatus} = appState;
+  const navigate = useNavigate();
+
     const popUp = (index) => {
       let list = [...data]
       list[index].isMb = !list[index].isMb
       setdata(list)
+      if(!loginStatus){
+        navigate('/login')
+      }
      
   }
 

@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { DataAppContext } from "./DataApp";
+import {  useNavigate } from "react-router-dom";
 import { ColorRing } from 'react-loader-spinner';
 import Checkout from './checkout';
  const Train = () => {
@@ -6,10 +8,18 @@ import Checkout from './checkout';
   const [data, setdata] = useState([]);
   const [loader, setLoader] = useState(false);
 
+  const localContext = useContext(DataAppContext);
+  const{appState , setAppState} = localContext;
+  const{username , loginStatus} = appState;
+  const navigate = useNavigate();
+
   const popUp = (index) => {
     let list = [...data]
     list[index].isMb = !list[index].isMb
     setdata(list)
+    if(!loginStatus){
+      navigate('/login')
+    }
    
 }
 
@@ -77,10 +87,6 @@ import Checkout from './checkout';
         <button >Search</button>         
          </div>  
          </div>
-
-
-
-
          {loader ? <div style={{ marginLeft: "720px" }}><ColorRing
                 visible={true}
                 height="80"

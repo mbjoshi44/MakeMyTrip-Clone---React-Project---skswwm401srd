@@ -1,10 +1,20 @@
-import React ,{useEffect, useState}from 'react'
+import React ,{useEffect, useState , useContext}from 'react'
+import { DataAppContext } from "./DataApp";
+import {  useNavigate } from "react-router-dom";
+
 import '../styles/flight.css';
 import '../styles/apifetch.css';
 import { ColorRing } from 'react-loader-spinner';
 import Checkout from './checkout';
 
 const Flight = () => {
+  const localContext = useContext(DataAppContext);
+  const{appState , setAppState} = localContext;
+  const{username , loginStatus} = appState;
+  const navigate = useNavigate();
+
+
+
 
 const[data ,setdata]  = useState([])
 const [loader, setLoader] = useState(false);
@@ -13,7 +23,9 @@ const [loader, setLoader] = useState(false);
         let list = [...data]
         list[index].isMb = !list[index].isMb
         setdata(list)
-       
+       if(!loginStatus){
+  navigate('/login')
+}
     }
 
   const getApi = async () => {
@@ -24,9 +36,9 @@ const [loader, setLoader] = useState(false);
 
 
     setTimeout(() => {
-      data.map((item) => [
-          item.isMb = false
-      ])
+      // data.map((item) => [
+      //     item.isMb = false
+      // ])
       setdata(data);
       setLoader(false)
 

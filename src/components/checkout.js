@@ -1,23 +1,17 @@
-import React,{useContext, useState} from 'react'
-import { DataAppContext } from "./DataApp";
-import {  useNavigate } from "react-router-dom";
+import React,{useState} from 'react'
+
 
 import '../styles/checkout.css';
  const Checkout = ({setdata,data,modelData,index,fakeString}) => {
 
-const localContext = useContext(DataAppContext);
-const{appState , setAppState} = localContext;
-const{username , loginStatus} = appState;
-const navigate = useNavigate();
+
   const cancel = ()=>{
     let list = [...data]
     list[index].isMb = !list[index].isMb
     setdata(list)       
      }
 const [success, setSuccess] = useState(false);
-  if(!loginStatus){
-    navigate('/login')
-  }
+  
 
   return (
     <>
