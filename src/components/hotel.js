@@ -30,7 +30,7 @@ const Hotel = () => {
 
       setTimeout(() => {
        data.map((item)=>[
-          item.isAnkur=false
+          item.isMb=false
        ])
           setdata(data);
           setLoader(false)

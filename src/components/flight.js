@@ -36,9 +36,9 @@ const [loader, setLoader] = useState(false);
 
 
     setTimeout(() => {
-      // data.map((item) => [
-      //     item.isMb = false
-      // ])
+      data.map((item) => [
+          item.isAnkur = false
+      ])
       setdata(data);
       setLoader(false)
 
